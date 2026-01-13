@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mei - Herrscher of Origin</title>
+    <link rel="stylesheet" href="mei.css">
+</head>
+<body>
+
+    <section id="basic-info">
+        <div class="bg-pattern"></div>
+        <div class="fancy-header reveal">
+            <div class="header-box">
+                <div class="header-chinese">Thông tin cơ bản</div>
+            </div>
+            <div class="header-english">HERRSCHER OF ORIGIN</div>
+        </div>
+
+        <div class="info-layout reveal">
+            <div class="center-portrait">
+                <div class="portrait-border">
+                    <div class="star-deco star-1">✦</div>
+                    <div class="star-deco star-2">✦</div>
+                    <div class="star-deco star-3">✦</div>
+                    <div class="star-deco star-4">✦</div>
+                    <img src="../img/mei1.png" alt="Mei Portrait">
+                </div>
+            </div>
+
+            <div class="info-pill p-left-1">
+                <span class="pill-label">Thuộc tính</span>
+                <img src="../img/soao.jpg" class="pill-icon-img" alt="Attribute Icon">
+                <span class="pill-val">虚数</span>
+            </div>
+
+            <div class="info-pill p-left-2">
+                <span class="pill-label">Vũ khí</span>
+                <img src="../img/sword.png" class="pill-icon-img" alt="Weapon Icon">
+                <span class="pill-val">太刀</span>
+            </div>
+
+            <div class="info-pill p-right-1">
+                <span class="pill-label">Sát thương</span>
+                <img src="../img/lightning.jpg" class="pill-icon-img" alt="Damage Icon">
+                <span class="pill-val">雷伤</span>
+            </div>
+
+            <div class="info-pill p-right-2">
+                <span class="pill-label">Sinh Nhật</span>
+                <img src="../img/birthday.webp" class="pill-icon-img" alt="Birthday Icon">
+                <span class="pill-val">04/13</span>
+            </div>
+
+            <div class="desc-box">
+                「Khởi Nguyên Chi Luật Giả」là dạng thức S cấp hoàn toàn mới của Raiden Mei. Bên cạnh nàng luôn lơ lửng những 「Dực Nhận」, có thể tự do tấn công kẻ địch.
+                <br>
+                Sau khi kích hoạt tất sát kỹ, 「Khởi Nguyên Chi Luật Giả」 sẽ vung thanh thái đao trong tay, liên tiếp tung ra những nhát chém dữ dội về phía đối phương. Khi ánh đao của nàng lướt qua, ngay cả hiện thực cũng sẽ vì sức mạnh khởi nguyên ấy mà bị xé toạc và tan vỡ.
+                <div class="desc-divider">◇━━━━━━━━━━━━━━━━━━◇</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="weapon">
+        <div class="bg-pattern"></div>
+        
+        <div class="section-header reveal">
+            <span class="diamond">◆</span>
+            <span class="header-text">Vũ khí</span>
+            <span class="header-sub">/ WEAPON</span>
+        </div>
+
+        <div class="weapon-container reveal">
+            <div class="weapon-card float">
+                <img src="../img/mei2.png" alt="Key of Origin" class="weapon-img">
+                <div class="weapon-name">Trừng Ngưng Chi Thược</div>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="weapon-arrow">≫</div>
+
+            <div class="weapon-card float">
+                <div class="pri-arm-badge">
+                    <span>Siêu Hạn</span>
+                    <span>Vũ Khí</span>
+                </div>
+                <img src="../img/mei3.png" alt="Domain of Origin" class="weapon-img">
+                <div class="weapon-name">Trừng Ngưng Chi Cảnh：Tự Tính Thuần Nhất</div>
+                <div class="stars">★★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stigmata">
+        <div class="bg-pattern"></div>
+        
+        <div class="section-header reveal">
+            <span class="diamond">◆</span>
+            <span class="header-text">Vết Thánh —「Danh Dĩ Thủy Nguyên」</span>
+            <span class="header-sub">/ STIGMATA</span>
+        </div>
+
+        <div class="stigmata-container reveal">
+            <div class="stig-card float">
+                <img src="../img/mei4.png" class="stig-img" alt="Top">
+                <div class="stig-name">Raiden Mei（Thượng）</div>
+            </div>
+            <div class="stig-card float">
+                <img src="../img/mei5.png" class="stig-img" alt="Mid">
+                <div class="stig-name">Raiden Mei（Trung）</div>
+            </div>
+            <div class="stig-card float">
+                <img src="../img/mei6.png" class="stig-img" alt="Bot">
+                <div class="stig-name">Raiden Mei（Hạ）</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+    <script>
+            const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+
+</body>
+</html>

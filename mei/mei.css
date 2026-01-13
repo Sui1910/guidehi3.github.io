@@ -1,0 +1,639 @@
+  
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap');
+
+
+    :root {
+        --bg-image: url("https://s1.zerochan.net/Houkai.3rd.600.3890259.jpg");
+    }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'Microsoft YaHei', 'Nunito', sans-serif;
+            /* background: linear-gradient(180deg, var(--deep-bg) 0%, var(--bg-purple) 50%, var(--deep-bg) 100%); */
+            color: var(--text-white);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }   
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -3;
+        }
+        
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: -2;
+        }
+
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Stars Background */
+        .stars-bg {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent),
+                radial-gradient(1px 1px at 15% 90%, white, transparent);
+            background-size: 200% 200%;
+            animation: stars 3s ease-in-out infinite;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        @keyframes stars {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            z-index: 1;
+        }
+
+        .fancy-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; 
+        }
+        
+        .header-box {
+            background: #996ee1;
+            padding: 18px 56px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(153, 110, 225, 0.45);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-box::before {
+            content: '';
+            position: absolute;
+            inset: -100%;
+           
+        }
+
+
+
+        .fancy-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;   
+        }
+
+        .header-chinese {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 12px;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+
+            text-shadow:
+                0 3px 10px rgba(0,0,0,0.25),
+                0 0 18px rgba(255,255,255,0.25);
+        }
+
+        .header-english {
+            font-size: 1rem;
+            letter-spacing: 9px;
+            font-weight: 400;
+            font-family: 'Nunito', sans-serif;
+
+            color: rgba(255,255,255,0.4);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        }
+
+        /* ===== INFO LAYOUT ===== */
+        .info-layout {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 580px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .center-portrait {
+            position: relative;
+            margin-bottom: 80px;
+            z-index: 2;
+        }
+
+        .portrait-border {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #9d8bc7 0%, #b8a8e0 50%, #9d8bc7 100%);
+            padding: 8px;
+            box-shadow: 
+                0 0 40px rgba(157, 139, 199, 0.8),
+                0 0 80px rgba(157, 139, 199, 0.5),
+                inset 0 0 30px rgba(255, 255, 255, 0.3);
+            position: relative;
+            animation: float 4s ease-in-out infinite, borderGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 40px rgba(157, 139, 199, 0.8),
+                    0 0 80px rgba(157, 139, 199, 0.5),
+                    inset 0 0 30px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 60px rgba(157, 139, 199, 1),
+                    0 0 100px rgba(157, 139, 199, 0.7),
+                    inset 0 0 40px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .portrait-border img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .star-deco {
+            position: absolute;
+            color: white;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: starTwinkle 2s ease-in-out infinite;
+        }
+
+        .star-1 { top: -10px; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+        .star-2 { bottom: -10px; left: 50%; transform: translateX(-50%); animation-delay: 0.5s; }
+        .star-3 { left: -15px; top: 50%; transform: translateY(-50%); animation-delay: 1s; }
+        .star-4 { right: -15px; top: 50%; transform: translateY(-50%); animation-delay: 1.5s; }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* ===== INFO PILLS VỚI ẢNH ===== */
+        .info-pill {
+            position: absolute;
+            background: white;
+            color: var(--dark-purple);
+            padding: 15px 8px;
+            border-radius: 50px;
+            width: 80px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 3px solid rgba(184, 168, 224, 0.8);
+            z-index: 1;
+        }
+        
+        .pill-label { 
+            font-size: 1rem; 
+            writing-mode: vertical-rl; 
+            letter-spacing: 3px; 
+            margin-top: 8px;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .pill-val { 
+            font-size: 1.15rem; 
+            writing-mode: vertical-rl; 
+            font-weight: 900; 
+            color: var(--dark-purple); 
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .pill-icon-img {
+            width: 45px; 
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #e8e0f5;
+        }
+
+        .p-left-1 { left: 30px; top: 20px; }
+        .p-left-2 { left: 130px; top: 90px; }
+        .p-right-1 { right: 130px; top: 90px; }
+        .p-right-2 { right: 30px; top: 20px; }
+
+        /* ===== DESC BOX TRONG SUỐT GIỐNG ẢNH ===== */
+        .desc-box {
+            position: absolute;
+            bottom: -80px;
+            background: rgba(45, 27, 78, 0.5);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(184, 168, 224, 0.3);
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.95);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .desc-divider {
+            margin-top: 20px;
+            color: rgba(184, 168, 224, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 50px;
+            color: #e8e0f5;
+        }
+
+        .diamond {
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+        }
+
+        .header-text {
+            color: white;
+        }
+
+        .header-sub {
+            font-size: 1rem;
+            opacity: 0.6;
+            font-weight: 400;
+            letter-spacing: 4px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* ===== WEAPON SECTION ===== */
+        .weapon-container {
+            display: flex;
+            gap: 30px;
+            background: rgba(45, 27, 78, 0.4);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(184, 168, 224, 0.2);
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .weapon-card {
+            position: relative;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .weapon-img {
+            width: 350px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .weapon-name {
+            background: linear-gradient(90deg, transparent, rgba(157, 139, 199, 0.9), transparent);
+            padding: 10px 25px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: white;
+        }
+
+        .stars {
+            color: #ffd700;
+            margin-top: 10px;
+            letter-spacing: 3px;
+            font-size: 1.1rem;
+        }
+
+        .weapon-arrow {
+            font-size: 3rem;
+            color: rgba(184, 168, 224, 0.6);
+            font-weight: 100;
+        }
+
+        .pri-arm-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(157, 139, 199, 0.9);
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 900;
+            box-shadow: 0 0 20px rgba(255,255,255,0.6);
+            text-align: center;
+            line-height: 1.3;
+            z-index: 5;
+            transform: rotate(15deg);
+        }
+
+        /* ===== STIGMATA SECTION ===== */
+        .stigmata-container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .stig-card {
+            width: 250px;
+            height: 400px;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border: 4px solid white;
+        }
+        
+        .stig-img {
+            width: 100%;
+            height: 88%;
+            object-fit: cover;
+        }
+
+        .stig-name {
+            height: 12%;
+            background: linear-gradient(135deg, #9d8bc7, #b8a8e0);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        }
+        .weapon-card:nth-child(1) { animation-delay: 0s; }
+        .weapon-card:nth-child(2) { animation-delay: 0.8s; }
+
+        .stig-card:nth-child(1) { animation-delay: 0s; }
+        .stig-card:nth-child(2) { animation-delay: 0.6s; }
+        .stig-card:nth-child(3) { animation-delay: 1.2s; }
+
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .center-portrait {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .info-pill {
+            animation: float 3.5s ease-in-out infinite;
+        }
+
+        .info-pill.p-left-1 { animation-delay: 0s; }
+        .info-pill.p-left-2 { animation-delay: 0.5s; }
+        .info-pill.p-right-1 { animation-delay: 1s; }
+        .info-pill.p-right-2 { animation-delay: 1.5s; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+@media (max-width: 768px) {
+
+    /* ===== GLOBAL ===== */
+    section {
+        min-height: auto;
+        padding: 28px 10px;
+    }
+
+    /* ===== FANCY HEADER (SECTION 1) ===== */
+    .header-box {
+        padding: 10px 22px;
+        border-radius: 12px;
+    }
+
+    .header-chinese {
+        font-size: 1.45rem;
+        letter-spacing: 3px;
+    }
+
+    .header-english {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        margin-top: 2px;
+    }
+
+    /* ===== SECTION HEADER (SECTION 2 & 3) ===== */
+    .section-header {
+        font-size: 1.15rem;
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .header-sub {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .header-text {
+        font-size: 0.85rem;
+    }
+    /* ===== INFO LAYOUT ===== */
+    .info-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        margin-top: 14px;
+    }
+
+    .center-portrait {
+        grid-column: span 2;
+        margin-bottom: 6px;
+    }
+
+    .portrait-border {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+
+    /* ===== INFO PILLS ===== */
+    .info-pill {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 8px 6px;
+        border-radius: 12px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        animation: none;
+    }
+
+    .pill-icon-img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .pill-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+        writing-mode: horizontal-tb;
+    }
+
+    .pill-val {
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        writing-mode: horizontal-tb;
+    }
+
+    /* ===== DESC ===== */
+    .desc-box {
+        grid-column: span 2;
+        margin-top: 10px;
+        padding: 14px;
+        font-size: 0.75rem;
+        line-height: 1.55;
+        position: static;
+    }
+
+    .p-left-1,
+    .p-left-2,
+    .p-right-1,
+    .p-right-2 {
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    /* ===== WEAPON ===== */
+    .weapon-container {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .weapon-img {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+    }
+
+    .weapon-name {
+        font-size: 0.75rem;
+    }
+
+    .stars {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .weapon-arrow {
+        transform: rotate(90deg);
+        font-size: 1.6rem;
+    }
+
+    /* ===== STIGMATA ===== */
+    .stigmata-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        width: 100%;
+    }
+
+    .stig-card {
+        width: 100%;
+        height: 210px;
+        border-radius: 12px;
+    }
+
+    .stig-img {
+        height: 80%;
+    }
+
+    .stig-name {
+        height: 20%;
+        font-size: 0.65rem;
+        padding: 0 4px;
+        line-height: 1.15;
+    }
+}
