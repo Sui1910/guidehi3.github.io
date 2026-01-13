@@ -2,36 +2,50 @@
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap');
 
         :root {
-            --primary-purple: #9d86e1;
-            --dark-purple: #7a65c5;
-            --deep-bg: #8972d3;
-            --accent-gold: #ffe58f;
-            --text-white: #ffffff;
-        }
+         --bg-image: url("https://upload-os-bbs.hoyolab.com/upload/2022/08/20/179440628/f90aff5620395aa7d52cba5caa8ef935_5317349950595887244.jpg");
+    }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Noto Sans SC', 'Microsoft YaHei', 'Nunito', sans-serif;
-            background-color: var(--deep-bg);
+            /* background: linear-gradient(180deg, var(--deep-bg) 0%, var(--bg-purple) 50%, var(--deep-bg) 100%); */
             color: var(--text-white);
             overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }   
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -3;
+        }
+        
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: -2;
         }
 
-        /* --- BACKGROUND PATTERN --- */
-        .bg-pattern {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-            pointer-events: none;
+
+        section {
+            position: relative;
+            z-index: 1;
         }
 
         /* --- SECTIONS --- */
@@ -53,10 +67,10 @@
             align-items: center;
             font-size: 2.2rem;
             font-weight: 900;
-            color: var(--text-white);
+            color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             margin-bottom: 40px;
-            background: rgba(106, 76, 172, 0.8);
+            background: rgba(221, 108, 221, 0.5);
             padding: 10px 30px;
             border-radius: 50px;
             border: 2px solid white;
@@ -155,7 +169,7 @@
         .desc-box {
             position: absolute;
             bottom: -60px;
-            background: rgba(105, 80, 165, 0.95);
+            background: rgba(221, 108, 221, 0.2);
             width: 100%;
             padding: 25px;
             border-radius: 15px;
@@ -169,7 +183,7 @@
         .weapon-desc {
             margin-top: 40px;
             max-width: 900px;
-            background: rgba(105, 80, 165, 0.95);
+            background: rgba(221, 108, 221, 0.2);;
             padding: 25px;
             border-radius: 15px;
             border: 1px solid rgba(255,255,255,0.3);
@@ -183,7 +197,7 @@
  .weapon-container {
     display: flex;
     gap: 30px;
-    background: rgba(121, 95, 189, 0.4);
+    background: rgba(221, 108, 221, 0.1);
     padding: 30px;
     border-radius: 24px;
     border: 1px solid rgba(255,255,255,0.15);
@@ -207,7 +221,7 @@
 }
 
 .weapon-name {
-    background: linear-gradient(90deg, transparent, rgba(236, 119, 187, 0.9), transparent);
+    background: linear-gradient(90deg, transparent, rgba(236, 119, 187, 0.), transparent);
     padding: 8px 22px;
     border-radius: 5px;
     margin-top: -18px;
@@ -282,7 +296,7 @@
 
         .stig-name {
             height: 12%;
-            background: rgba(106, 76, 172, 1);
+            background: rgba(221, 108, 221, 0.6);
             color: white;
             display: flex;
             align-items: center;
